@@ -1,0 +1,20 @@
+---
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: quote-frontend-git
+spec:
+  type: git
+  params:
+    - name: url
+      value: https://github.com/iwashinat/quote-frontend
+---
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: quote-frontend-image
+spec:
+  type: image
+  params:
+    - name: url
+      value: jp.icr.io/kabanero/quote-frontend:v1.1
